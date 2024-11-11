@@ -10,5 +10,30 @@
   4. AES operates on a 4 × 4 column-major order array of bytes, termed the state
 
 ## PROGRAM: 
+```
+def xor_encrypt_decrypt(input_string, key):
+    input_len = len(input_string)
+    key_len = len(key)
+    result = ""
+    for i in range(input_len):
+        result += chr(ord(input_string[i]) ^ ord(key[i % key_len]))
+    return result
+
+def main():
+    url = input("Enter the URL:")
+    key = input(" Enter the Key: ") # Simple key for XOR encryption
+
+    print("Original URL:", url)
+    encrypted_url = xor_encrypt_decrypt(url, key)
+    print("Encrypted URL:", encrypted_url)
+    decrypted_url = xor_encrypt_decrypt(encrypted_url, key)
+    print("Decrypted URL:", decrypted_url)
+
+main()
+```
 ## OUTPUT:
+![image](https://github.com/user-attachments/assets/c8caf190-67fa-43d0-bfa2-0be79f460319)
+
+
 ## RESULT: 
+The Program is executed Successfully.
